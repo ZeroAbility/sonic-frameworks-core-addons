@@ -12,8 +12,8 @@ portingAid: false
 deprecated: false
 release: true
 libraries:
-    - cmake: "KF6::CoreAddons"
-cmakename: KF6CoreAddons
+    - cmake: "SonicFrameworksCoreAddons"
+cmakename: SonicFrameworksCoreAddons
 
 public_lib: true
 group: Frameworks

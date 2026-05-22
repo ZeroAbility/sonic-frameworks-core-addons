@@ -3,7 +3,7 @@ add_definitions(-DQT_FORCE_ASSERTS=1)
 
 include(ECMAddTests)
 include(ConfigureChecks.cmake) # configure checks for QFileSystemWatcher
-include(../KF6CoreAddonsMacros.cmake)
+include(../SonicFrameworksCoreAddonsMacros.cmake)
 
 find_package(Qt6Test ${REQUIRED_QT_VERSION} CONFIG QUIET)
 

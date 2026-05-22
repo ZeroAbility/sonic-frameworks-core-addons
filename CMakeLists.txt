@@ -136,7 +136,7 @@ include(ECMPoQmTools)
 set(kcoreaddons_version_header "${CMAKE_CURRENT_BINARY_DIR}/src/lib/kcoreaddons_version.h")
 ecm_setup_version(PROJECT VARIABLE_PREFIX KCOREADDONS
     VERSION_HEADER "${kcoreaddons_version_header}"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6CoreAddonsConfigVersion.cmake"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/SonicFrameworksCoreAddonsConfigVersion.cmake"
     SOVERSION 6
 )
 
@@ -163,27 +163,27 @@ if (BUILD_TESTING)
 endif()
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6CoreAddons")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/SonicFrameworksCoreAddons")
 
-configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/KF6CoreAddonsConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF6CoreAddonsConfig.cmake"
+configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/SonicFrameworksCoreAddonsConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/SonicFrameworksCoreAddonsConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF6CoreAddonsConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF6CoreAddonsConfigVersion.cmake"
-    "${CMAKE_CURRENT_SOURCE_DIR}/KF6CoreAddonsMacros.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/SonicFrameworksCoreAddonsConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/SonicFrameworksCoreAddonsConfigVersion.cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/SonicFrameworksCoreAddonsMacros.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KF6CoreAddonsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF6CoreAddonsTargets.cmake NAMESPACE KF6::)
+install(EXPORT KF6CoreAddonsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE SonicFrameworksCoreAddonsTargets.cmake NAMESPACE KF6::)
 
 install(FILES ${kcoreaddons_version_header} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCoreAddons COMPONENT Devel)
 
 if (NOT WIN32)
-    ecm_generate_pkgconfig_file(BASE_NAME KF6CoreAddons
+    ecm_generate_pkgconfig_file(BASE_NAME SonicFrameworksCoreAddons
         INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KCoreAddons
         DEPS Qt6Core
         INSTALL
